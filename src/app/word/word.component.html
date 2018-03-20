@@ -1,2 +1,5 @@
-<h3 class="text-info">Component word dau tien</h3>
+<h3 [hidden]="forgot" class="text-info">Component word dau tien</h3>
 <p>{{en}}</p>
+<img [src]="imgUrl" alt="" srcset="">
+<button (click)="forgot = !forgot" class="btn-primary">CLick</button>
+<button (click)="toggleForgot()" class="btn-success">Binding Fucn</button>
