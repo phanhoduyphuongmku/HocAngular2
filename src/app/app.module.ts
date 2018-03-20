@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import {WordComponent} from './Word/word.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WordComponent
   ],
   imports: [
     BrowserModule
