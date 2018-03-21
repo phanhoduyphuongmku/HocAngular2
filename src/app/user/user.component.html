@@ -1,0 +1,11 @@
+<div [ngStyle] = "userStyle">Phan Hồ Duy Phương</div>
+<input (keyup)="showEvent($event)" type="text" placeholder="Enter name here">
+<h3 [ngStyle] = "{
+  color: 'blue'  ,
+  fontSize: '20px'
+}
+">Your name is:{{ name}}</h3>
+<input [(ngModel)]="name2" #txtUser type="text" placeholder="Enter name here" >
+<h3 [style.color]="'red'" (click)="shape = !shape">Your name 2 is:{{name2}}</h3>
+<code>{{txtUser.value|json }}</code>
+<div [ngClass]="shape? 'circle':'square'"></div>
