@@ -15,6 +15,7 @@ import { WordsComponent } from './words/words.component';
 import { PersonComponent } from './person/person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import {IpComponent} from './ip.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {IpComponent} from './ip.component';
     WordsComponent,
     PersonComponent,
     ListPersonComponent,
-    IpComponent
+    IpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
