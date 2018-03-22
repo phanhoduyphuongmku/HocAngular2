@@ -1,8 +1,22 @@
-<form (submit)="onSubmit(formSignIn);" #formSignIn = "ngForm">
-  <input type="text" placeholder="Username" name="username" [(ngModel)] = "username" required>
-  <p *ngIf="formSignIn.controls.username?.errors.required">
+<form (ngSubmit)="onSubmit(formSignIn);" #formSignIn = "ngForm">
+  <input type="text" placeholder="E-mail" ngModel #txtEmail="ngModel" name="email"  required email>
+  <p *ngIf="txtEmail.touched && txtEmail.errors?.required">
       Chua nhap email
   </p>
-  <input type="password" placeholder="Password" name="password" [(ngModel)] = "password">
+  <p *ngIf="txtEmail.touched && txtEmail.errors?.email">
+    Email chưa đúng
+</p>
+  <input type="password" placeholder="Password" name="password" 
+  ngModel #txtPassword = "ngModel" minlength="6" pattern="[a-z]*">
+  <div ngModelGroup = "SoThich">
+    <label><input type="checkbox" [ngModel]="true" name="checkbox1">Thích đọc sách</label>
+    <label><input type="checkbox" ngModel name="checkbox2">Thích thể thao</label>
+    <label><input type="checkbox" [ngModel]="false" name="checkbox3">Thích du lịch</label>
+  </div>
   <button class="btn btn-primary" [disabled]="formSignIn.invalid"> Gui </button>
 </form>
+<p>
+    {{formSignIn.errors | json}}
+    {{txtPassword.errors | json}}
+  {{formSignIn.value | json}}
+</p>
