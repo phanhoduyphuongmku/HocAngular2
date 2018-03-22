@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {PostService} from './post.service';
+import {IpService} from './ip.service';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +14,7 @@ import { StructComponent } from './struct/struct.component';
 import { WordsComponent } from './words/words.component';
 import { PersonComponent } from './person/person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
+import {IpComponent} from './ip.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +25,15 @@ import { ListPersonComponent } from './list-person/list-person.component';
     StructComponent,
     WordsComponent,
     PersonComponent,
-    ListPersonComponent
+    ListPersonComponent,
+    IpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [PostService,IpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
